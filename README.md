@@ -26,3 +26,11 @@ Add below to your appsettings.json or Secret Manager (Manage User Secrets - righ
   .
 }
 ```
+
+After obtaining the JWT bearer token (by calling **/token** or **/facebook** endpoints), enter the token using the **Authorize button** as:
+
+Authorization: Bearer \<token\>
+
+Then you can call the secure Movies Controller as shown below.
+
+![Secure API Call](https://github.com/VeritasSoftware/AspNetCore.Security.Jwt.Microservice/blob/master/SecureAPICall.jpg)
