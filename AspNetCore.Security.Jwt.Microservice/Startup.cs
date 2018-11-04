@@ -29,17 +29,18 @@ namespace AspNetCore.Security.Jwt.Microservice
                 c.SwaggerDoc("v1", new Info { Title = "XXX API", Version = "v1" });
             });
 
-            //services.AddSecurity<Authenticator>(this.Configuration, true);
-            //services.AddMvc().AddSecurity();
+            //Default Auth + Facebook
+            //services.AddSecurity<Authenticator>(this.Configuration, true)
+            //        .AddFacebookSecurity(this.Configuration, builder =>
+            //            builder.AddClaim("FacebookUser", userModel => userModel.UserAccessToken)
+            //        , true); ;
+            //services.AddMvc().AddSecurity().AddFacebookSecurity();
 
-            //services.AddSecurity<Authenticator, UserModel>(this.Configuration, builder =>
-            //    builder.AddClaim(IdType.Name, userModel => userModel.Id)
-            //           .AddClaim(IdType.Role, userModel => userModel.Role)
-            //           .AddClaim("DOB", userModel => userModel.DOB.ToShortDateString())
-            //, true);
+            //OR
 
+            //Custom User model auth + Facebook
             services
-            .AddSecurity<Authenticator, UserModel>(this.Configuration, builder =>
+            .AddSecurity<CustomAuthenticator, UserModel>(this.Configuration, builder =>
                 builder.AddClaim(IdType.Name, userModel => userModel.Id)
                        .AddClaim(IdType.Role, userModel => userModel.Role)
                        .AddClaim("DOB", userModel => userModel.DOB.ToShortDateString())
