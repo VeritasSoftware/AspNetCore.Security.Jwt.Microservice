@@ -22,5 +22,7 @@ Add below to your appsettings.json or Secret Manager (Manage User Secrets - righ
     "AppId": "your facebook app id here",
     "AppSecret": "your facebook app secret here"
   }
+  .
+  .
 }
 ```
