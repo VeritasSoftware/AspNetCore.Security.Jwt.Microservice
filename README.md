@@ -9,7 +9,7 @@ API Swagger UI
 
 ![API Swagger UI](https://github.com/VeritasSoftware/AspNetCore.Security.Jwt.Microservice/blob/master/Demo.jpg)
 
-After obtaining the JWT bearer token (by calling **/token**, **/azure**, /facebook** endpoints), enter the token using the **Authorize button** as:
+After obtaining the JWT bearer token (by calling **/token**, **/azure**, **/facebook** endpoints), enter the token using the **Authorize button** as:
 
 Authorization: Bearer \<token\>
 
