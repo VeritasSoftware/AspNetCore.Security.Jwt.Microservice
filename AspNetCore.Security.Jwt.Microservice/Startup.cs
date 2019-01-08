@@ -53,10 +53,16 @@ namespace AspNetCore.Security.Jwt.Microservice
                               .AddClaim("DOB", userModel => userModel.DOB.ToShortDateString()))
                    .AddFacebookSecurity(builder =>
                        builder.AddClaim("FacebookUser", userModel => userModel.UserAccessToken.ToString()))
-                   .AddAzureADSecurity();
+                   .AddAzureADSecurity()
+                   .AddGoogleSecurity()
+                   .AddTwitterSecurity();
 
             //services.AddMvc().AddSecurity().AddFacebookSecurity().AddAzureADSecurity();
-            services.AddMvc().AddSecurity<UserModel>().AddFacebookSecurity().AddAzureADSecurity();
+            services.AddMvc().AddSecurity<UserModel>()
+                             .AddFacebookSecurity()
+                             .AddAzureADSecurity()
+                             .AddGoogleSecurity()
+                             .AddTwitterSecurity();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
